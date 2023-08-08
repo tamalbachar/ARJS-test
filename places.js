@@ -2,7 +2,7 @@ window.onload = () => {
     let method = 'dynamic';
 
     // if you want to statically add places, de-comment following line
-    // method = 'static';
+    method = 'static';
 
     if (method === 'static') {
         let places = staticLoadPlaces();
@@ -62,7 +62,7 @@ function dynamicLoadPlaces(position) {
     let corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
     // Foursquare API
-    let endpoint = `${corsProxy}https://api.foursquare.com/v2/venues/search?intent=checkin
+    let endpoint = `${corsProxy}https://api.foursquare.com/v3/places/nearby
         &ll=${position.latitude},${position.longitude}
         &radius=${params.radius}
         &client_id=${params.clientId}
